@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 658578559}
   - component: {fileID: 658578558}
   - component: {fileID: 658578557}
+  - component: {fileID: 658578561}
   m_Layer: 0
   m_Name: Wall (2)
   m_TagString: Untagged
@@ -495,6 +496,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &658578561
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658578556}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &799320380
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +524,7 @@ GameObject:
   - component: {fileID: 799320383}
   - component: {fileID: 799320382}
   - component: {fileID: 799320381}
+  - component: {fileID: 799320385}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -603,10 +621,26 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &799320385
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799320380}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +702,7 @@ GameObject:
   - component: {fileID: 918160169}
   - component: {fileID: 918160168}
   - component: {fileID: 918160167}
+  - component: {fileID: 918160171}
   m_Layer: 0
   m_Name: Wall (1)
   m_TagString: Untagged
@@ -768,6 +803,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &918160171
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918160166}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &972362734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1121,7 @@ GameObject:
   - component: {fileID: 1594555641}
   - component: {fileID: 1594555640}
   - component: {fileID: 1594555639}
+  - component: {fileID: 1594555638}
   - component: {fileID: 1594555637}
   - component: {fileID: 1594555643}
   m_Layer: 6
@@ -1101,6 +1153,22 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1594555638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594555636}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970becefd4ea96f4b946550bdc3a062c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Avoider
+  player: {fileID: 1265956596}
+  avoidRange: 5
+  avoidSpeed: 3
+  showGizmos: 1
 --- !u!136 &1594555639
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1205,13 +1273,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1594555636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -481570500, guid: 623073c9577256a44bb203668e6a720e, type: 3}
+  m_Script: {fileID: 1603054177, guid: e274499f0d02f3049a9aff0792954007, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: HuntAvoider2.dll::HuntAvoider2.Avoider
-  player: {fileID: 1265956596}
-  avoidRange: 5
-  avoidSpeed: 3
-  showGizmos: 1
+  m_EditorClassIdentifier: HuntAvoider.dll::HuntAvoider.Avoider
+  player: {fileID: 0}
+  avoidRange: 0
+  avoidSpeed: 0
+  showGizmos: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

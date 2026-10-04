@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
@@ -19,9 +18,9 @@ public class Avoider : MonoBehaviour
     [SerializeField]
     private bool showGizmos;
 
-    private bool hadMadePoisson = false;
+    //private bool hadMadePoisson = false;
 
-    private bool newDestination = false;
+    //PoissonDiscSampler sampler;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,6 +37,55 @@ public class Avoider : MonoBehaviour
     void Update()
     {
         CreatePoissonDiskSampler();
+
+        /*
+        float size_x = 5f;
+        float size_y = 5f;
+        float radius = 2f;
+
+        List<Vector3> candidates = new List<Vector3>();
+
+        
+
+        if (agent.remainingDistance <= 0)
+        {
+            if (!hadMadePoisson)
+            {
+                sampler = new PoissonDiscSampler(size_x, size_y, radius);
+                hadMadePoisson = true;
+            }
+            
+            foreach (var point in sampler.Samples())
+            {
+                Vector3 samplePosition = new Vector3(transform.position.x + point.x - size_x / 2f, transform.position.y, transform.position.z + point.y - size_y / 2f);
+
+                if (CanPlayerSeePoint(samplePosition))
+                {
+                    if (showGizmos)
+                    {
+                        Debug.DrawLine(transform.position, samplePosition, Color.red);
+                    }
+                }
+                else if (!CanPlayerSeePoint(samplePosition))
+                {
+                    if (showGizmos)
+                    {
+                        Debug.DrawLine(transform.position, samplePosition, Color.green);
+                    }
+                    candidates.Add(samplePosition);
+                }
+            }
+
+            var clostestPoint = GetClosestPoint(candidates);
+            if (Vector3.Distance(player.transform.position, transform.position) < avoidRange)
+            {
+                agent.destination = clostestPoint;
+                hadMadePoisson = false;
+                Debug.Log(clostestPoint);
+            }
+
+        }
+        */
     }
 
     private bool CanPlayerSeePoint(Vector3 point)
@@ -58,7 +106,7 @@ public class Avoider : MonoBehaviour
             return false;
         }
     }
-
+    
     private void CreatePoissonDiskSampler()
     {
         float size_x = 5f;
@@ -94,7 +142,7 @@ public class Avoider : MonoBehaviour
             agent.destination = clostestPoint;
         }
     }
-
+    
     private Vector3 GetClosestPoint(List<Vector3> points)
     {
         Vector3 closestPoint = Vector3.zero;

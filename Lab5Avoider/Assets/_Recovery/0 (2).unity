@@ -1205,13 +1205,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1594555636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -481570500, guid: 623073c9577256a44bb203668e6a720e, type: 3}
+  m_Script: {fileID: 1603054177, guid: e274499f0d02f3049a9aff0792954007, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: HuntAvoider2.dll::HuntAvoider2.Avoider
-  player: {fileID: 1265956596}
-  avoidRange: 5
-  avoidSpeed: 3
-  showGizmos: 1
+  m_EditorClassIdentifier: HuntAvoider.dll::HuntAvoider.Avoider
+  player: {fileID: 0}
+  avoidRange: 0
+  avoidSpeed: 0
+  showGizmos: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
